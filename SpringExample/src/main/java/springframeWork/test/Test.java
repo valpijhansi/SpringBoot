@@ -12,7 +12,7 @@ public class Test {
 		
 ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
 Car car = context.getBean(Car.class);
-// IEngine eng = context.getBean(IEngine.class);
+ IEngine eng = context.getBean(IEngine.class);
 car.drive();
 car.setEng(eng);
 	}
