@@ -1,0 +1,36 @@
+    @Autowired:
+                Spring provides annotation-based auto-wiring by @Autowired annotation.
+                It is used to autowire spring bean on setter methods,insatnce variable, and constructor.
+                When we sue @Autowired annotation,  the spring container auto-wires the bean by matching data-type.
+    @Configuration:
+                It is a class level annotation.The class annotated with @Configuration used by Spring Containers as a source of bean definitions.
+
+    @ComponentScan:
+                It is used to scan a package for bean.
+                we can also specify the base package to scan for spring Components.
+
+    @Bean:
+        It is Method-level annotation.
+        It is an alternative ofXML<bean> tag.
+        It tells method to produce a bean to be managed by spring container.  
+
+    @Component: 
+                It is a class-level annotation. 
+                It is used to mark a Java class as a bean. 
+                A Java class annotated with @Component is found during the classpath. 
+                The Spring Framework pick it up and configure it in the application context as a Spring Bean.            
+
+    @Service: 
+                It is also used at class level. 
+                It tells the Spring that class contains the business logic. 
+
+    @Repository: 
+                It is a class-level annotation. 
+                The repository is a DAOs (Data Access Object) that access the database directly. 
+                The repository does all the operations related to the database.      
+
+    @EnableAutoConfiguration: 
+                            It auto-configures the bean that is present in the classpath and configures it to run the methods. 
+                            The use of this annotation is reduced in Spring Boot 1.2.0 release because developers provided an alternative of the annotation, i.e. @SpringBootApplication.
+    @SpringBootApplication:
+                            It is a combination of three annotations @EnableAutoConfiguration, @ComponentScan, and @Configuration
