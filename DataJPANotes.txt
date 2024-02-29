@@ -1,0 +1,116 @@
+
+================
+Spring Data JPA
+================
+1) What is ORM & why
+2) What is Data JPA & Why ?
+3) Data JPA Repositories
+		- CrudRepository
+		- JpaRepository
+4) What is Entity
+5) Data JPA Application
+6) Crud Operations
+7) Pagination & Sorting
+8) Query By Example (QBE)
+9) findByXXX methods
+10) Custom Queries
+11) Primary Keys & Generators
+12) Composite Primary Key
+13) Timestamping
+14) Transactions
+15) Connection Pooling
+16) Association Mapping 
+17) Conclustion
+
+
+=============================
+What is persistence layer ?
+=============================
+
+=> It contains set of classes & interfaces to communicate with database.
+
+=> In java, we have several options to develop persistence layer
+
+			1) JDBC
+			2) Hibernate ORM
+			3) Spring JDBC
+			4) Spring ORM
+			5) Spring Data JPA
+
+Note: Spring Data JPA is the latest trend in the market to developer Persistence layer in java based applications.			
+
+===============================
+Why to use Spring Data JPA ?
+===============================
+
+=> No need to write boilerplate code (duplicate)
+
+=> No need to write queries 
+
+=> Ready made methods support is available
+
+				- save () - insert record into db table
+				- findById ( )
+				- findAll ( )
+				- count ( )
+				- deleteAll ( ) 
+
+=> Reducing development time
+
+==============
+What is ORM ?
+==============
+
+=> ORM stands for Object relational mapping
+
+=> It is a technique to map java objects with database tables.
+
+=> Using ORM we can deal with objects to perform DB operations.
+
+=> When we are using ORM framworks we need to map java classes with database tables.
+
+			User.java     ============>  USER_TBL
+
+			Product.java  ============>  PRODUCT_TBL
+
+Note: The java class which is mapped with database table is called as Entity class.
+
+
+			Entity class  ---------> db table
+
+			Entity class variables -----> db tbl columns
+
+			Entity class obj ------> db tbl row
+
+
+=> We will use below annotations to create Entity classes
+
+
+@Entity : Represent java class as an Entity class
+
+@Table : To map java class name with table name (Optional)
+
+@Id  : Represents entity variable mapped with PK column in table
+
+@Column	: To map java class variables with table column names 
+			(optional)
+
+==========================
+What is Jpa Repository ?
+==========================
+
+=> Data JPA provided repository interfaces to simplify Persistence layer development.
+
+			a) CrudRepository
+			b) JpaRepository (more features)
+
+
+Note: To perform DB operations we will create interface by extending from JpaRepository.
+
+
+===========
+Assignment
+===========
+
+
+Data JPA App with Oracle : https://www.youtube.com/watch?v=ZGKHCJsp4hg
