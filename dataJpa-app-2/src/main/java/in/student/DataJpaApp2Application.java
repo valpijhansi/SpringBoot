@@ -13,13 +13,17 @@ public class DataJpaApp2Application {
 		ConfigurableApplicationContext context = SpringApplication.run(DataJpaApp2Application.class, args);
 		
 		studentService s = context.getBean(studentService.class);
-		s.saveData();
+		//s.saveData();
 		
 		// s.getAllStudent();
 		
 		// s.getAllStudentSort();
 		
-		s.getAllSortById();
+//		s.getAllSortById();
+		s.getDetailsByPagination();
+		s.getAllWithFilter();
+		
+		
 	}
 
 }

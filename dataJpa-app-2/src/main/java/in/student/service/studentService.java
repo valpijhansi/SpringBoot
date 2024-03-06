@@ -1,6 +1,9 @@
 package in.student.service;
 import java.util.*;
 
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -48,6 +51,28 @@ public class studentService {
 		Sort sort = Sort.by("sid").descending();
 		List<Student> list = stRepo.findAll(sort);
 		list.forEach(e ->System.out.println(e));
+	}
+	
+	public void getDetailsByPagination() {
+		int pageSize = 3;
+		int pageNum = 2;
+		PageRequest pg = PageRequest.of(pageNum-1, pageSize);
+		
+		Page<Student> page = stRepo.findAll(pg);
+		
+		List<Student> student = page.getContent();
+		student.forEach(e->System.out.println(e));
+	}
+	
+	public void getAllWithFilter() {
+		Student entity  = new Student();
+		entity.setSname("Lokesh");
+		entity.setSid(111);
+		Example<Student> example = Example.of(entity);
+		
+		List<Student> student = stRepo.findAll(example);
+		
+		student.forEach(e -> System.out.println(e));
 	}
 
 }
