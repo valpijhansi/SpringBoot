@@ -64,7 +64,7 @@ public class studentService {
 		student.forEach(e->System.out.println(e));
 	}
 	
-	public void getAllWithFilter() {
+	public void getAllStudentWithFilter() {
 		Student entity  = new Student();
 		entity.setSname("Lokesh");
 		entity.setSid(111);
