@@ -1,0 +1,268 @@
+
+=================
+Spring Web MVC
+=================
+
+-> Spring Web MVC is one module in spring framework.
+
+-> Using Spring Web MVC, we can develop below types of applications
+
+		1) Web Application ( C 2 B )
+
+		2) Distributed Application ( B 2 B )
+
+-> We need to use 'springboot-starter-web' depenency to work with Spring Web MVC module.
+
+-> 'web-starter' will provide embedded container by default. We no need to setup server manually.
+
+				- Apache (Default)
+				- Jetty
+				- Netty 		
+
+-> Spring Web MVC supports multiple presentation technologies
+
+			Ex: JSP, Thymeleaf...
+
+-> Spring Web MVC supports Form Binding. form data will be mapped to java object.
+
+Note: When we develop java web app using servlets we need capture form data like below.
+
+	 	String phno = request.getParameter("phno");
+	 	Long ph = Long.parseLong(phno);
+
+Note: We no need to write this logic in web mvc. It will take care of capturing form data and convert into corresponding data type and store into java object.	 	
+
+============================
+Spring Web MVC Architecture
+============================
+
+=> In spring web mvc, below components will be involved...
+
+1) DispatcherServlet : front controller/framework servlet
+
+2) HandlerMapper : To identify request handler (controller)
+
+3) Controller : Request Handler (spring bean) - we have to develop
+
+4) ModelAndView : Model represents data & view represents UI page.
+
+5) ViewResolver : To identify where view pages available in app
+
+6) View : To render model data on view page.
+
+=========================================
+Building First Web App using Spring Boot
+==========================================
+
+1) Create Boot app with below dependencies
+
+			a) web-starter
+			b) thymeleaf-starter
+			c) devtools
+
+2) Create Controller class with required methods and map methods to HTTP methods with unique url patterns.
+
+3) Create View Page (HTML + Thymeleaf) (under templates folder)		
+
+4) Run the application and test it.	
+
+
+----------------- Controller -------------------------------
+
+@Controller
+public class MsgController {
+
+	@GetMapping("/greet")
+	public ModelAndView getMsg2() {
+
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("msg2", "Good Morning...!!");
+		mav.setViewName("index");
+
+		return mav;
+	}
+
+	@GetMapping("/welcome")
+	public ModelAndView getMsg1() {
+
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("msg1", "Welcome to Ashok IT");
+		mav.setViewName("index");
+		return mav;
+	}
+}
+
+------------------------index.html------------------------------
+<html>
+	<body>
+		<p th:text="${msg1}"></p>
+		<p th:text="${msg2}"></p>
+	</body>
+</html>
+----------------------------------------------------------------
+
+
+===========================
+Spring Web MVC Assignments
+===========================
+
+1) Develop Spring Boot web app to retrieve products data from db table and display in UI page as a table.
+
+
+=========================
+Form Based Applications
+=========================
+
+=> In every web app many forms will be available
+
+		- login form
+		- register form
+		- search form
+
+=> We need to capture form data and we need to perform operation on that data...
+
+
+Note: Web MVC supports form binding.		
+
+=============================================================
+Develop Boot web app to save and retrieve products data 
+==============================================================
+
+1) Product.java (form binding + entity)
+
+		Integer pid; (PK, Auto_Increment)
+		String pname;
+		Double price;
+		Integer qty;
+
+2) ProductRepo.java (JpaRepository)		
+
+3) ProductService.java 
+
+		- public boolean saveProduct(Product p);
+
+		- public List<Product> getProducts( );
+
+4) ProductController.java
+
+		public ModelAndView loadForm( ); - GET
+
+		public ModelAndView saveProduct(Product p) - POST	
+
+		public ModelAndView getAllProducts( )  - GET
+
+5) View Pages
+	
+		index.html - form to enter data
+		data.html  - table to display data
+
+=================================
+Embedded Database in spring boot
+=================================
+
+=> Embedded databases are called temporary databases
+
+=> H2 we can use as embedded database
+
+=> When application starts h2 db will start and when application stopped h2 db also gets stopped.
+
+Note: If application re-started then we will loose old data.
+
+=> H2 db is used only for practice purpose.
+
+====================================
+How to use H2 DB in spring boot ?
+====================================
+
+### Step-1 : Add h2 dependency in pom.xml file
+
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+### Step-2 : Configure H2 datasource properties in application.properties file
+
+
+spring.datasource.username=ashokit
+spring.datasource.password=abc
+spring.datasource.url=jdbc:h2:mem:sbms
+
+spring.jpa.show-sql=true
+
+server.port=8081
+
+
+### Step-3 : Run the application and access h2-console in browser
+
+		URL : http://localhost:port/h2-console
+
+=================================================
+
+1) What is web mvc ?
+
+2) Advantages with Web MVC
+
+3) Web MVC Architecture
+
+4) What is Embedded Container
+
+5) How to develop boot web app
+
+6) How to send data from controller to UI
+
+7) Web MVC Form with Form Binding
+
+8) Embedded Database (h2)		
+
+============================================
+How to change default container to  jetty ?
+============================================
+
+=> When we add web starter then tomcat will become default embedded container to run boot application.
+
+=> If we want to change from tomcat to jetty then we need to make below changes in pom.xml
+
+### Step-1 : Exclude tomact from web-starter dependency
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+				</exclusion>
+			</exclusions>
+			
+		</dependency>
+
+### Step-2 : Add jetty starter
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jetty</artifactId>
+		</dependency>
+
+### Step-3 : Run the application and observe console.
+
+
+==============
+Requirement : 
+==============
+
+Develop  Spring Boot web application with below functionalities
+
+	Registration Page : Name, Email, Pwd and Phno fields
+
+	Login Page : Email & Pwd fields
+
+	Dashboard Page : <msg>
+
+Note: When user registered, application should send an email to the user.
+
+Email Subject : Account Created - Ashok IT
+
+Email Body : Congratuations.. you are onboard..

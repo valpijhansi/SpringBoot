@@ -1,0 +1,247 @@
+
+=================
+SDLC
+=================
+
+=> SDLC means software development life cycle
+
+=> SDLC represents the process of software project development.
+
+=> SDLC contains several phases
+
+	- Requirements Gathering
+	- Requirements Analysis
+	- Designing
+	- Development
+	- Testing
+	- Deployment
+	- Support
+
+=> In SDLC several methodologies
+
+	- Waterfall (outdated)
+	- Agile	(trending)
+
+================
+Waterfall Model	
+================
+
+=> It is linear model / Sequential model
+
+=> Work will be completed step by step
+
+=> After one stage completed then only move to next stage
+
+=> It supports only forward direction
+
+=> Requirements fixed & budget fixed
+
+=> Client involment is very less 
+
+=> Client will see project at the end
+
+=> If client is not happy with project then money wasted and time wasted.
+
+
+##### To overcome challenges of waterfall model, industry is using Agile Model now a days #####
+
+==============
+Agile Model
+=============
+
+=> Agile is an iterative approach to develop and deliver software applications to client.
+
+=> In Agile model (planning + development + testing + deployment ) is a continuos process.
+
+=> Project functionalitiy will be divided into multiple sprints/releases.
+
+=> Client feedback is very important is Agile model.
+
+=> Client involvement is also high in agile model.
+
+=> Requirements & Budget is not fixed in Agile.
+
+============
+Agile Team
+============
+
+1) Product Owner  : Responsible for client deliverables.
+
+2) Scrum Master : Responsible to manage the team.
+
+3) Tech Lead : Responsible for solving technical challenges.
+
+4) Team members : developers + testers 
+
+Note: Industry standard agile team size is 7 to 10 only.
+
+=> Every agile team will have one tech lead & one scrum master.
+
+=> One project can have multiple agile teams also.
+
+==================
+Agile Terminology
+==================
+
+1) Backlog Grooming
+
+2) Story & Story Points
+
+3) Sprint Planning
+
+4) Sprint
+
+5) Scrum
+
+6) Retrospective
+
+================================================================
+
+
+=> Backlog grooming is a meeting in which we will discuss pending works in the project.
+
+=> For every pending work one story will be created in jira.
+
+=> For every story we will assign story points.
+=> Story points represents duration to complete the story.
+
+			3 points => 1 day
+
+			5 points => 2 days
+
+			8 points => 3 days
+
+Note: Every team member can create stories in jira (under backlog)
+
+=> Sprint Planning is a meeting in which we will discuss about priority stories to complete.	
+
+Note: Industry standard for sprint duration is 2 weeks of time.	
+
+=> Sprint means fixed set of stories targeted to be completed in given time.
+
+=> During sprint, every day scrum call will be there.
+
+=> Scrum call is a meeting in which we will discuss agile team work updates.
+
+			1) What i am doing
+			2) Status of my story
+			3) When it will complete
+			4) Any challenges to complete
+
+Note: Every team member should give above updates to scrum master in scrum call.
+
+
+=> Retrospective is a meeting in which agile team will discuss about prevous sprint.
+
+=> Retro is like a review meeting. in retro we will discuss
+
+		- what went well
+		- what went wrong
+		- lessons learnt
+		- new ideas
+
+Note: Retro happens monthly once.		
+
+==============================
+JIRA (Project Mgmt Software)
+==============================
+
+=> JIRA S/w developed by Atlasian company.
+
+=> JIRA is commercial software (we can use trial version)
+
+=> JIRA is used as project mgmt s/w...
+
+		- Creating stories
+		- Story Assignment
+		- Story Status
+		- Sprint Reports
+		- Project Tracking
+
+=> JIRA is also used as Bug Reporting tool.
+
+
+
+=> Backlog stories
+=> Story creation
+=> Story Points
+=> Sprint Planning
+=> Sprint
+=> Story Assignment
+=> Story Status
+=> Retrospective
+
+
+
+============ Sending workupdate in email========================
+
+Subject : Scrum Update | Ashok Bollepalli
+
+Hi Steve,
+
+Greetings for the day..!!
+
+Today i am unable to join scrum call due to my person work.
+
+Please find by work status below
+
+I am working on story AA-7897 (IN Progress)
+
+This is targeted for tomorrow.
+
+I don't have any issues to complete my story.
+
+Thanks,
+Ashok.
+
+================= Sending Leave Request email ====================
+
+Subject : OOO Request | Ashok Bollepalli
+
+Hi Steve,
+
+Greetings for the day..!!
+
+I will be OOO from 10-Mar to 14-March due to function at home..
+
+Kindly approve my leave request...
+
+Thanks,
+Ashok.
+
+================== Jenkins Pipeline Request ====================
+
+To : amazon.devops@amazon.com
+
+Subject : Jenkins Pipeline Creation Request | AA-5
+
+Hi DevOps Team,
+
+Please create jenkins cicd pipeline for 'Orders' microservices.
+
+Git Hub Repo : <url>
+
+@manager : Kindly approve this request
+
+Thanks,
+Ashok.
+
+=======================================================================
+
+OOO  => Out of office
+
+ASAP => As soon as possible
+
+FYI => For your information
+
+PFB => Please find below
+
+ping =>  Send a message in teams
+
+EOD => End of the day
+
+DM => Direct message
+
+DL => Distribution List
+
+========================================================================
