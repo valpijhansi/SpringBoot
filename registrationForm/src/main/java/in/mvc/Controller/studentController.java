@@ -21,6 +21,7 @@ public class studentController {
 		model.addAttribute("student", new Student());
 		return "index";
 	}
+	
 	@PostMapping("/login")
 	public String loginHandler(Student student,Model model) {
 		Student std = studentService.getDetails(student.getEmail(), student.getPwd());
@@ -34,6 +35,7 @@ public class studentController {
 		
 	}
 	
+	
 	@GetMapping("/register")
 	public String registerForm(Model model) {
 		
@@ -43,6 +45,10 @@ public class studentController {
 	
 	@PostMapping("/register")
 	public String registerHandler(Student student,Model model) {
+		Student data = studentService.findByEmail(student.getEmail());
+		if(data!=null) {
+			model.addAttribute("emsg", "email already exists");
+		}else {
 		boolean status = studentService.saveStudent(student);
 		if(status) {
 			model.addAttribute("smsg", "Student Registered");
@@ -50,7 +56,9 @@ public class studentController {
 		}else {
 			model.addAttribute("msg", "Student Registration failed..");
 		}
+		}
 		return "registerView";
+		
 	}
 	
 	@GetMapping("/logout")

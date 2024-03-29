@@ -7,6 +7,8 @@ public interface studentService {
  public boolean saveStudent(Student student);
 	
 	public Student getDetails(String email,String pwd);
+
+	public Student findByEmail(String email);
 	
 	
 

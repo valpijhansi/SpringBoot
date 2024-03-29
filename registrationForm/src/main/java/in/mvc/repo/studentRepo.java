@@ -7,6 +7,7 @@ import in.mvc.entity.Student;
 public interface studentRepo extends JpaRepository<Student,Integer> {
 
 	Student findByEmailAndPwd(String email, String pwd);
+	Student findByEmail(String email);
 	
 
 }
