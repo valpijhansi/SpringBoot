@@ -29,6 +29,23 @@ public class emailUtil {
 		return false;
 		
 	}
+
+	public boolean sendResetPasswordEmail(String email, String resetLink) {
+		// TODO Auto-generated method stub
+		try {
+			SimpleMailMessage msg = new SimpleMailMessage();
+			    msg.setTo(email);
+				msg.setSubject("Reset Password");
+			    msg.setText("Click the following link to reset your password:"+resetLink);
+	 			mailSender.send(msg);
+		}catch(Exception e) {
+			e.printStackTrace();
+			return true;
+			}
+			
+			return false;
+		
+	}
 	
 
 }

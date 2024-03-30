@@ -8,6 +8,8 @@ public interface studentRepo extends JpaRepository<Student,Integer> {
 
 	Student findByEmailAndPwd(String email, String pwd);
 	Student findByEmail(String email);
-	
+	Student findByPwd(String pwd);
+	//Student createPasswordResetTokenForUser(Student student, String resetToken);
+		
 
 }

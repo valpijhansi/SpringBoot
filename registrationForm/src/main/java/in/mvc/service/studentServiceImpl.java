@@ -40,4 +40,15 @@ public class studentServiceImpl implements studentService {
 		return repo.findByEmail(email);
 	}
 
+	@Override
+	public Student findByPwd(String pwd) {
+		// TODO Auto-generated method stub
+		return repo.findByPwd(pwd);
+	}
+
+	
+
+	
+	
+
 }

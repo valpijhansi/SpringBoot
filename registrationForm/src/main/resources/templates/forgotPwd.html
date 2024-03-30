@@ -13,31 +13,26 @@
 
 	<div class="container">
 
-		<h2>Login Here</h2>
+		<h2>Enter your Registered Mail</h2>
 
 		<font color="red">
 			<p th:text="${emsg}"></p>
 		</font>
 
-		<form th:object="${student}" th:action="@{/login}" method="post">
+		<form th:object="${student}" th:action="@{/forgot}" method="post">
 			<table>
 				<tr>
 					<td>Email : </td>
 					<td> <input type="text" th:field="*{email}" /> </td>
 				</tr>
-				<tr>
-					<td>Password : </td>
-					<td> <input type="password" th:field="*{pwd}" /> </td>
-				</tr>
-				<tr>
-					<td></td>
-					<td> <input type="submit" value="Login" class="btn btn-primary" /> </td>
+				<td></td>
+					<td> <input type="submit" value="Submit" class="btn btn-warning" /> </td>
 				</tr>
 			</table>
 		</form>
 
-		<a href="forgot">Forgot Pwd ?</a> &nbsp; &nbsp;
-		<a href="register">Sign Up Here</a>
+		
+		<!--<a href="login">Sign In Here</a>-->
 
 	</div>
 

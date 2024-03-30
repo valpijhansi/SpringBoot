@@ -1,13 +1,19 @@
 package in.mvc.Controller;
 
+
+import org.eclipse.angus.mail.imap.protocol.UID;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import in.mvc.entity.Student;
 import in.mvc.service.studentService;
+import in.mvc.utils.emailUtil;
+import jakarta.mail.Service;
 
 @Controller
 public class studentController {
@@ -60,6 +66,27 @@ public class studentController {
 		return "registerView";
 		
 	}
+	@GetMapping("/forgot")
+	public String forgotPassword(Model model) {
+		model.addAttribute("student",new Student());
+		return "forgotPwd";
+		
+	}
+	
+	@PostMapping("/forgot")
+	public String forgotPwdHandler(Student student, Model model) {
+		Student mail = studentService.findByEmail(student.getEmail());
+		if(mail==null) {
+			model.addAttribute("emsg", "User Not Found");
+			return "forgotPwd";
+		}
+		
+       
+		return "forgotPwd";
+	        
+
+	        
+		}
 	
 	@GetMapping("/logout")
 	public String logout(Model model) {
