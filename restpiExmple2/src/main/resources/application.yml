@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: restpiExmple2
+  datasource:
+    ddl:
+      auto: true
+    password: Jhansi@123
+    url: jdbc:mysql://localhost:3306/sbms33
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
