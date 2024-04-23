@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class IrctcAppApplication {
+public class RestApiExample3Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(IrctcAppApplication.class, args);
+		SpringApplication.run(RestApiExample3Application.class, args);
 	}
 
 }
